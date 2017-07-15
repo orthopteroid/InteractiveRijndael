@@ -1,13 +1,15 @@
 # InteractiveRijndael
-Encrypt/Decrypt text using Rijndael in a C# interactive console
+Encrypt/Decrypt text using Rijndael in a C# interactive console.
 
-For use with csi.exe (on my machine, at C:\Program Files (x86)\MSBuild\14.0\Bin\csi.exe) or the Visual Studio C# Interactive window, described in
+The NewKey function generates a base-64 string containing a psuedorandom key of the specified bitlength - it's not necessary to use this function, you can use your own key. The encrypt/decrypt implmentation uses the supplied key (either your own, or one made by NewKey) to create a psuedorandom key and psuedorandom salt and an initialization vector for the Rijndael algorithim. There are likely problems with running a single keystring through Rfc2898DeriveBytes to make a key, salt and an IV, but there you have it.
+
+Script has been tested with csi.exe (on my machine, at C:\Program Files (x86)\MSBuild\14.0\Bin\csi.exe) or the Visual Studio C# Interactive window, as described in
 
 https://msdn.microsoft.com/en-us/magazine/mt614271.aspx
 
-or possibly the mono REPL, described in
+and on linux using scriptcs.exe with mono - built from source, as described in
 
-http://www.mono-project.com/docs/tools+libraries/tools/repl/
+https://github.com/scriptcs/scriptcs/wiki/Building-on-Mac-and-Linux
 
 Example C# interactive console session...
 

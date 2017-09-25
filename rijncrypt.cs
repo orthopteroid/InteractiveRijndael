@@ -9,7 +9,7 @@ public static class ArgHelper
 	public static bool Get(string[] args, string arg, string defaultValue, out string returnValue)
 	{
 		int i = Array.IndexOf(args, arg);
-		returnValue = i < 0 ? defaultValue : args[ i + 1 ];
+		returnValue = i < 0 ? defaultValue : args[ i +1 ];
 		return i >= 0;
 	}
 }
